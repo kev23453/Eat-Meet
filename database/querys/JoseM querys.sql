@@ -1,14 +1,3 @@
-CREATE TABLE CategoriaComida(
-    id_categoria INT PRIMARY KEY IDENTITY(1,1),
-    categoria VARCHAR(255) UNIQUE
-);
-
-CREATE TABLE Restaurante_x_platillo(
-    id_registro INT PRIMARY KEY IDENTITY(1,1),
-    id_restaurante INT,
-    id_platillo INT
-);
-
 CREATE TABLE platillos( 
     id_platillos INT PRIMARY KEY IDENTITY(1,1),
     nombre_platillos VARCHAR(255),
