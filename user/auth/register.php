@@ -22,17 +22,18 @@
 
         <div class="box">
             <label for="username">Nombre de Usuario *</label>
-            <input type="text" name="username" id="username"  placeholder="Nombre de Usuario..." required>
+            <input type="text" name="username" id="username" title="Nombre sólo acepta letras y espacios en blanco" placeholder="Nombre de Usuario..." required>
+            
         </div>
 
         <div class="box">
             <label for="email">Email *</label>
-            <input type="email" title="Email incorrecto" name="email" id="email" title="Nombre sólo acepta letras y espacios en blanco"  placeholder="Correo Electronico..." required>
+            <input type="email" title="Email incorrecto" name="email" id="email" placeholder="Correo Electronico..." required>
         </div>
 
         <div class="box">
             <label for="password">Contraseña *</label>
-            <input type="password" itle="La contraseña no es valida." name="password" class="inputPassword" id="password" placeholder="Contraseña..." required>
+            <input type="password" title="La contraseña no es valida." name="password" class="inputPassword" id="password" placeholder="Contraseña..." required>
             <i class="fas fa-eye-slash showPassword" data-inputContraseña="password"></i>
         </div>
 

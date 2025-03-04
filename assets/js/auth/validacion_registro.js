@@ -4,18 +4,46 @@ const $form = document.querySelector("form"),
 const cancelarBoton = () => {
     const $btnSend = $form.querySelector("button");
     $btnSend.disabled = true;
+    console.log($btnSend);
 }
 
 const activarBoton = () => {
     const $btnSend = $form.querySelector("button");
     $btnSend.disabled = false;
+    console.log($btnSend);
+}
+
+const removeErrorMenssage = (name) => {
+    const $errorSpan = document.querySelector(`span#${name}`);
+
+    if ($errorSpan.classList.contains("contact-form-error")) {
+        $errorSpan.classList.remove("show-error");
+
+        // Después de la animación de salida, ocultamos el mensaje
+        setTimeout(() => {
+            $errorSpan.classList.remove("contact-form-error");
+            $errorSpan.classList.add("none");
+        }, 300);
+    }
+
+}
+const addErrorMenssage = (name) => {
+    const $errorSpan = document.querySelector(`span#${name}`);
+
+    $errorSpan.classList.remove("none");
+
+    // La animación de entrada con "show-error"
+    setTimeout(() => {
+        $errorSpan.classList.add("contact-form-error", "show-error");
+    }, 100);
 }
 
 $inputs.forEach(($input) => {
     const $span = document.createElement("span");
     $span.id = $input.name;
     $span.textContent = $input.title;
-    // $span.classList.add("contact-form-error", "none"); // Descomentar cuando haya estilos.
+    $span.classList.add("contact-form-error", "none");
+
     $input.insertAdjacentElement("afterend", $span);
 });
 
@@ -25,37 +53,38 @@ $form.addEventListener("input", (e) => {
     if (name === "username") {
         const pattern = /^[a-zA-Z0-9 _-]+$/;
         if (value === "" || pattern.test(value)) {
-            console.log("Nombre de usuario válido.");
+            removeErrorMenssage(name);
         } else {
-            console.log(`Error: La cadena "${value}" es inválida.`);
+            addErrorMenssage(name);
         }
     }
 
     if (name === "email") {
         const pattern = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9\-]+(\.[a-z0-9\-]+)*(\.[a-z]{2,15})$/;
         if (value === "" || pattern.test(value)) {
-            console.log("Email válido.");
+            removeErrorMenssage(name);
         } else {
-            console.log("Email inválido.");
+            addErrorMenssage(name);
         }
     }
 
     if (name === "password") {
         if (value.length > 18 || value.length <= 0) {
-            console.log("ERROR: La contraseña debe tener entre 1 y 18 caracteres.");
+            addErrorMenssage(name);
         } else {
             console.log("Contraseña válida.");
+            removeErrorMenssage(name);
         }
     }
 
     if (name === "confirm-password") {
         const passwordValue = $form.password.value;
         if (value !== passwordValue) {
-            console.log("Error: Las contraseñas no coinciden.");
+            addErrorMenssage(name)
             cancelarBoton();
             
         } else {
-            console.log("Las contraseñas coinciden.");
+            removeErrorMenssage(name);
             activarBoton();
         }
     }
