@@ -1,0 +1,92 @@
+@import url('../variables_css/variables.css');
+@import url('../fonts_style/font.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: .3s ease all;
+}
+
+body {
+    background: var(--bg_page);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-transform: capitalize;
+}
+
+form {
+    background: var(--white);
+    width: 500px;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+form .box label {
+    color: rgba(0,0,0,0.7);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+form .box {
+    display: flex;
+    flex-direction: column;
+    margin: 18px 0;
+    position: relative;
+}
+
+form .box input{
+    padding: 12px 15px;
+    border: 1.5px solid #d2d2d2;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+}
+
+form .box input[type="password"] {
+    padding-right: 45px;
+}
+
+form .box input:focus {
+    border: 1px solid blue;
+}
+
+form button {
+    width: 100%;
+    cursor: pointer;
+    padding: 13px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+}
+
+form button:hover {
+    background: #2c2c2c;
+    color: var(--white);
+}
+
+
+#change_form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0 10px 0;
+}
+
+
+h2 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+i {
+    cursor: pointer;
+    color: #aaaaaa;
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+}

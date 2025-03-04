@@ -19,7 +19,8 @@
         </div>
 
         <button type="submit" class="btn-send">Login</button>
-        <span>ya tienes una cuenta? <a href="register.php">ingresa</a></span>
+        <span>aun no tienes cuenta? <a href="register.php">registrate</a></span>
+
 
     </form>
 </body>

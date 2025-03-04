@@ -1,0 +1,13 @@
+/*  
+variables para reutilizar 
+*/
+
+:root{
+    --bg_page: #f2f2f9;
+    --white: #fff;
+    --blue: cornflowerblue;
+    --sidebar-bg: #405189;
+    --success_color: #0ab39c;
+    --danger_color: #e96245;
+    --light-gray: #adadad;
+}
