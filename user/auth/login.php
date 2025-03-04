@@ -28,8 +28,6 @@
             <label for="password">Contraseña</label>
             <input type="password" name="password" id="password" placeholder="Ingrese la contraseña" required>
         </div>
-
-
     <h3 class = "go_register">¿Aún no tienes cuenta? <a href="register.php">Regístrate</a></h3>
 
 

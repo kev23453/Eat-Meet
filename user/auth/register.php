@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +35,7 @@
         </div>
 
         <button type="submit">Registrar</button>
+        <span>aun no tienes cuenta? <a href="login.php">registrate</a></span>
     </form>
 </body>
 </html>
