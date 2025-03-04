@@ -30,7 +30,6 @@
         </div>
     <h3 class = "go_register">¿Aún no tienes cuenta? <a href="register.php">Regístrate</a></h3>
 
-
         <button class="login" type="submit" class="btn-send">Login</button>
     </form>
 </body>
