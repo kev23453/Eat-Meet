@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +40,7 @@
         </div>
 
         <button type="submit">Registrar</button>
-        <span id="change_form">ya tienes una cuenta? - <a href="login.php">ingresa aqui</a></span>
+        <span id="change_form">¿Ya tienes una cuenta? - <a href="login.php">ingresa aqui</a></span>
     </form>
 
 

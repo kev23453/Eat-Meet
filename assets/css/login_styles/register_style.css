@@ -61,10 +61,12 @@ form button {
     border-radius: 5px;
     font-size: 15px;
     border: none;
+    background: black;
+    color: var(--white);
 }
 
 form button:hover {
-    background: #2c2c2c;
+    background: rgb(53, 53, 53);
     color: var(--white);
 }
 
@@ -74,6 +76,7 @@ form button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
     margin: 25px 0 10px 0;
 }
 
