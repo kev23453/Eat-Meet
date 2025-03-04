@@ -6,7 +6,7 @@ create table usuario(
 id_usuario int primary key identity(1,1),
 nombre_usuario varchar(25) not null,
 email varchar(50) not null,
-contraseña varchar(50) not null,
+contraseÃ±a varchar(50) not null,
 telefono varchar(20) null
 )
 
