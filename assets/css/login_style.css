@@ -1,0 +1,82 @@
+:root {
+    --gris: #eeeeee;
+    --fuentePrincipal: "quicksands", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* Font-Size sirve para variar el tamaño de la fuente */
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--gris);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    border-bottom: 1.3px solid var(--gris);
+    padding: 1.2rem 0;
+    margin-top: -.8rem;
+}
+
+label {
+    display: block;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2rem;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc54;
+    border-radius: 5px;
+}
+
+.formulario {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: white;
+    width: min(30rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.seccion {
+    margin: 2rem;
+}
+
+.login{
+    width: 85%; 
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.login:hover {
+    cursor: pointer;
+    background-color: rgb(33, 33, 33);
+}
+
+.go_register{
+    margin-top: -1rem;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+    color: black;
+}
