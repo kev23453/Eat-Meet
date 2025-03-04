@@ -1,0 +1,124 @@
+:root {
+    --gris: #eeeeee;
+    --fuentePrincipal: "quicksands", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* Font-Size sirve para variar el tamaño de la fuente */
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    transition: .3s ease all;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--gris);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    border-bottom: 1.2px solid rgb(0, 0, 0, 0.7);
+    padding: 1.2rem 0;
+    margin-top: -.8rem;
+    font-size: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.p_span{
+    display: block;
+    margin-top: 1rem;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+label {
+    display: block;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 15px;
+    color: rgba(0,0,0,0.7);
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc54;
+    border-radius: 5px;
+}
+
+.formulario {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: white;
+    width: min(50rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+form .seccion {
+    display: flex;
+    flex-direction: column;
+    margin: 18px 0;
+    position: relative;
+}
+
+form .seccion label {
+    color: rgba(0,0,0,0.7);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+form .seccion input{
+    padding: 12px 15px;
+    border: 1.5px solid #d2d2d2;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+}
+
+form .seccion input:focus {
+    border: 1px solid blue;
+}
+
+
+.login{
+    width: 100%; 
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 15px;
+}
+
+.login:hover {
+    cursor: pointer;
+    background-color: rgb(53, 53, 53);
+}
+
+.go_register{
+    text-transform: capitalize;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 25px 0 10px 0;
+}
