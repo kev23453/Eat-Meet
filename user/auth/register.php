@@ -27,24 +27,27 @@
 
         <div class="box">
             <label for="email">Email *</label>
-            <input type="email" name="email" id="email"  placeholder="Correo Electronico..." required>
+            <input type="email" title="Email incorrecto" name="email" id="email" title="Nombre sólo acepta letras y espacios en blanco"  placeholder="Correo Electronico..." required>
         </div>
 
         <div class="box">
             <label for="password">Contraseña *</label>
-            <input type="password" name="password" class="inputPassword" id="password" placeholder="Contraseña..." required>
+            <input type="password" itle="La contraseña no es valida." name="password" class="inputPassword" id="password" placeholder="Contraseña..." required>
             <i class="fas fa-eye-slash showPassword" data-inputContraseña="password"></i>
         </div>
 
         <div class="box">
             <label for="confirm-password">Confirmar Contraseña *</label>
-            <input type="password" name="confirm-password" class="inputPasswordConfirm" id="confirm-password" placeholder="Confirmar Contraseña"  required>
+            <input type="password" title="La contraseña deben coincidir." name="confirm-password" class="inputPasswordConfirm" id="confirm-password" placeholder="Confirmar Contraseña"  required>
             <i class="fas fa-eye-slash showPassword" data-inputContraseña="confirm-password"></i>
         </div>
 
         <button type="submit">Registrar</button>
         <span id="change_form">ya tienes una cuenta? - <a href="login.php">ingresa aqui</a></span>
     </form>
+
+
 </body>
-<script src="../../assets/js/auth_javaScript/script.js"></script>
+<script src="../../assets/js/auth/validacion_registro.js"></script>
+<script src="../../assets/js/auth/cambiar_tipoInput.js"></script>
 </html>
