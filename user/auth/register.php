@@ -33,7 +33,7 @@
 
         <div class="box">
             <label for="password">Contraseña *</label>
-            <input type="password" title="La contraseña no es valida." name="password" class="inputPassword" id="password" placeholder="Contraseña..." required>
+            <input type="password" title="La contraseña debe tener de 8 a 18 caracteres." name="password" class="inputPassword" id="password" placeholder="Contraseña..." required>
             <i class="fas fa-eye-slash showPassword" data-inputContraseña="password"></i>
         </div>
 
