@@ -35,12 +35,14 @@ class usuario extends conectionDB
     }
 
     
-    public function verificarSesion($identificador, $path) {
+    public function verificarSesion($path) {
         // Este método verifica si existe una sesión activa mediante una cookie.
         // Si la cookie con el identificador dado no está definida, redirige al usuario.
-        if (!isset($_COOKIE[$identificador])) {
+        if (!isset($_COOKIE['id'])) {
             header("Location: $path"); // Redirección a la página especificada
             exit(); // Detiene la ejecución del script
+        } else {
+            $id = $_COOKIE['id'];
         }
     }    
 }
