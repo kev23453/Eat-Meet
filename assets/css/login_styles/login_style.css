@@ -1,7 +1,5 @@
-:root {
-    --gris: #eeeeee;
-    --fuentePrincipal: "quicksands", sans-serif;
-}
+@import url("../variables_css/variables.css");
+@import url("../fonts_style/font.css");
 
 html {
     font-size: 62.5%;
@@ -21,7 +19,7 @@ html {
 }
 
 body {
-    background-color: var(--gris);
+    background-color: var(--bg_page);
     display: flex;
     align-items: center;
     height: 100vh;
@@ -72,6 +70,7 @@ input {
     padding: 2rem;
     border-radius: 1rem;
 }
+
 form .seccion {
     display: flex;
     flex-direction: column;
@@ -100,12 +99,13 @@ form .seccion input:focus {
 
 .login{
     width: 100%; 
-    padding: 8px;
+    padding: 14px;
     border-radius: 5px;
     color: white;
     background-color: black;
     border: none;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .login:hover {
@@ -121,4 +121,5 @@ form .seccion input:focus {
     align-items: center;
     font-weight: bold;
     margin: 25px 0 10px 0;
+    font-size: 17px;
 }
