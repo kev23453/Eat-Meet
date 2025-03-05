@@ -4,10 +4,6 @@
 
 include_once 'conexionDB.php';
 
-
-
-include_once 'conexionDB.php';
-
 class usuario extends conectionDB
 {
     public function __construct()
