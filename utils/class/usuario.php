@@ -34,7 +34,21 @@ class usuario extends conectionDB
         }
     }
 
-    
+
+
+    public function verificarExistencia($email,$emailUser){
+        try {
+            if ($email == $emailUser ) {
+                echo "El usuario ya existe";
+                return;
+            }            
+        } catch (PDOException $error) {
+            echo "Error: " . $error->getMessage();
+        }
+    }
+
+
+
     public function verificarSesion($path) {
         // Este método verifica si existe una sesión activa mediante una cookie.
         // Si la cookie con el identificador dado no está definida, redirige al usuario.
@@ -45,4 +59,34 @@ class usuario extends conectionDB
             $id = $_COOKIE['id'];
         }
     }    
+
+
+
+
+    // metodo para destruir las cookies
+    public function destruirSesion() {
+        setcookie("id", "", time() - 1, "/"); // seteando nuevas cokkies pero sin valor
+        echo "cerrando sesion..."; 
+        header("refresh:1"); // refrescando la pagina
+        exit;
+    }
+
+
+
+    public function obtenerDatosUsuario() {
+        try {
+            $user = $_COOKIE['id'];
+            $query = "SELECT * FROM usuario WHERE id_usuario = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$user]);
+            $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $response;
+        }
+        catch(PDOException $e) {
+            throw $e->getMessage();
+        }
+    }
+
+
+
 }
