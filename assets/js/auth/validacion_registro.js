@@ -15,10 +15,8 @@ const activarBoton = () => {
 
 const removeErrorMenssage = (name) => {
     const $errorSpan = document.querySelector(`span#${name}`);
-
     if ($errorSpan.classList.contains("contact-form-error")) {
         $errorSpan.classList.remove("show-error");
-
         // Después de la animación de salida, ocultamos el mensaje
         setTimeout(() => {
             $errorSpan.classList.remove("contact-form-error");
@@ -29,9 +27,7 @@ const removeErrorMenssage = (name) => {
 }
 const addErrorMenssage = (name) => {
     const $errorSpan = document.querySelector(`span#${name}`);
-
     $errorSpan.classList.remove("none");
-
     // La animación de entrada con "show-error"
     setTimeout(() => {
         $errorSpan.classList.add("contact-form-error", "show-error");
@@ -43,7 +39,6 @@ $inputs.forEach(($input) => {
     $span.id = $input.name;
     $span.textContent = $input.title;
     $span.classList.add("contact-form-error", "none");
-
     $input.insertAdjacentElement("afterend", $span);
 });
 
@@ -82,7 +77,6 @@ $form.addEventListener("input", (e) => {
         if (value !== passwordValue) {
             addErrorMenssage(name)
             cancelarBoton();
-            
         } else {
             removeErrorMenssage(name);
             activarBoton();
