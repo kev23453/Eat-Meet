@@ -7,8 +7,7 @@ include_once 'conexionDB.php';
 class usuario extends conectionDB
 {
     // metodo constructor heredando de la clase padre
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
     }
 
@@ -34,4 +33,14 @@ class usuario extends conectionDB
             echo $error->getMessage();
         }
     }
+
+    
+    public function verificarSesion($identificador, $path) {
+        // Este método verifica si existe una sesión activa mediante una cookie.
+        // Si la cookie con el identificador dado no está definida, redirige al usuario.
+        if (!isset($_COOKIE[$identificador])) {
+            header("Location: $path"); // Redirección a la página especificada
+            exit(); // Detiene la ejecución del script
+        }
+    }    
 }
