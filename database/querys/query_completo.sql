@@ -160,3 +160,16 @@ id_categoria int foreign key references categoriaRestaurante(id_categoria)
 
 
 SELECT COUNT(*) AS TABLES_DATABASE FROM sys.tables
+
+Go
+CREATE PROCEDURE VencerToken
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE token
+    SET confirmado = 1
+    WHERE confirmado = 0 AND DATEADD(MINUTE, 20, creado_a) <= GETDATE();
+   
+END;
+Go
