@@ -1,3 +1,6 @@
+@import url('../fonts_style/font.css');
+@import url('../variables_css/variables.css');
+
 body {
     display: flex;
     justify-content: center;
@@ -24,6 +27,7 @@ body {
     align-items: center;
     font-size: 24px;
     margin: 0 auto 10px;
+    color: #808080;
 }
 .code-inputs {
     display: flex;
@@ -38,7 +42,12 @@ body {
     font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    outline: none;
 }
+.code-inputs input:focus {
+    border: 1.5px solid blue;
+}
+
 .submit-btn {
     width: 100%;
     padding: 10px;

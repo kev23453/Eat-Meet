@@ -9,6 +9,15 @@ class token extends conectionDB {
     {
         parent::__construct();
     }
+
+    // metodo para crear los tokens
+
+    
+
+
+    
+
+    // metodo 
 }
 
 ?>

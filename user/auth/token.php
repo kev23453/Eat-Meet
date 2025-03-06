@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification Code</title>
     <link rel="stylesheet" href="../../assets/css/login_styles/token.css">
+    <link rel="stylesheet" href="../../assets/css/fontawesome/style.css">
 </head>
 <body>
     <div class="container">
-        <div class="icon">🔒</div>
+        <div class="icon"><i class="fas fa-lock"></i></div>
         <h2>
             Indroduce El Codigo
             De Verificacion
