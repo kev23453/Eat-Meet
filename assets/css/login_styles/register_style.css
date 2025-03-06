@@ -7,6 +7,7 @@
     box-sizing: border-box;
     text-decoration: none;
     transition: .3s ease all;
+    text-transform: capitalize;
 }
 
 body {

@@ -2,6 +2,8 @@
 
 class notificacion {
 
+      // esta clase es para configurar las notificaciones de los mensajes de los querys
+
     private $tipoNotificacion;
     private $titulo;
     private $mensaje;
@@ -19,9 +21,6 @@ class notificacion {
         $this->estado = $estado;
 
     }
-
-
-
 }
 
 ?>

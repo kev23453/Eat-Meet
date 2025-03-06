@@ -1,3 +1,22 @@
+<?php
+
+include '../../utils/autoload.php';
+
+if(isset($_POST['registrar'])) {
+     $username = filter_var($_POST['username']);
+     $email = filter_var($_POST['email']);
+     $confirm_password = filter_var(md5($_POST['confirm-password']));
+     $telefono = filter_var($_POST['telefono']);
+
+    $usuario = new usuario();
+    
+    //echo $usuario->obtenerUsuarioPorEmail($email);
+    
+    $usuario->crearUsuario($username, $email, $confirm_password, $telefono);
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +28,7 @@
     <title>Eat&Meet - Registrate</title>
 </head>
 <body>
-    <form action="#" method="POST">
+    <form action="register.php" method="POST">
         <h2>Registrate </h2>
         <span>descubre lugares cerca de tí</span>
         <br>
@@ -39,7 +58,14 @@
             <i class="fas fa-eye-slash showPassword" data-inputContraseña="confirm-password"></i>
         </div>
 
-        <button type="submit">Registrar</button>
+
+        <div class="box">
+            <label for="telefono">Telefono </label>
+            <input type="input" name="telefono" class="telefono" id="telefono" placeholder="Telefono">
+        </div>
+
+
+        <button type="submit" name="registrar">Registrar</button>
         <span id="change_form">¿Ya tienes una cuenta? - <a href="login.php">ingresa aqui</a></span>
     </form>
 

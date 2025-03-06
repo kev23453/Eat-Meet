@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification Code</title>
     <link rel="stylesheet" href="../../assets/css/login_styles/token.css">
+    <link rel="stylesheet" href="../../assets/css/fontawesome/style.css">
 </head>
 <body>
     <div class="container">
-        <div class="icon">🔒</div>
+        <div class="icon"><i class="fas fa-lock"></i></div>
         <h2>
             Indroduce El Codigo
             De Verificacion
@@ -20,6 +21,8 @@
                 <input type="text" name="digit2" maxlength="1" required>
                 <input type="text" name="digit3" maxlength="1" required>
                 <input type="text" name="digit4" maxlength="1" required>
+                <input type="text" name="digit5" maxlength="1" required>
+                <input type="text" name="digit6" maxlength="1" required>
             </div>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
