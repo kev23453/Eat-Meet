@@ -3,6 +3,7 @@
 //TODO: Agregar los metodos Setter and Getter
 
 include_once 'conexionDB.php';
+include_once 'cookies.php';
 
 class usuario extends conectionDB
 {
@@ -22,7 +23,8 @@ class usuario extends conectionDB
 
             if(count($result) > 0) {
                 foreach($result as $dataUser) {
-                    setcookie('id', $dataUser['id_usuario'], time() + 60*60*12, '/');
+                    $cookies = new cookies(); // creacion de cookies
+                    $cookies->createUserCookies($dataUser['id_usuario']);
                     header("refresh:1; url='$path_redirect'");
                 }
             }else{
@@ -36,14 +38,18 @@ class usuario extends conectionDB
 
 
 
+    // 
     public function verificarExistencia($email,$emailUser){
         try {
-            if ($email == $emailUser ) {
+            if ($email == $emailUser) {
                 echo "El usuario ya existe";
-                return;
-            }            
+                return false;
+            }else{
+                return true;
+            }   
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
+            
         }
     }
 
@@ -73,6 +79,7 @@ class usuario extends conectionDB
 
 
 
+    // obtener el usuario
     public function obtenerDatosUsuario() {
         try {
             $user = $_COOKIE['id'];
@@ -87,6 +94,55 @@ class usuario extends conectionDB
         }
     }
 
+
+
+
+    public function obtenerUsuarioPorEmail($email) {
+        try {
+            $query = "SELECT * FROM usuario WHERE email = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$email]);
+            $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(count($response) > 0) {
+                return $response;
+            }else{
+                $response = false;
+                return $response;
+            }
+        }
+        catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+
+
+
+    // funcion para crear usuario
+    public function crearUsuario($username, $email, $password, $telefono) {
+        try{
+            $dataUser = $this->obtenerUsuarioPorEmail($email);
+            
+            if(empty($dataUser)) { // 
+                //foreach($dataUser as $dataUser) {
+                    //if(!$this->verificarExistencia($email, $dataUser['email']) ){
+
+                        // info: aqui ira en caso de que funciones
+                        $query = "INSERT INTO usuario (nombre_usuario, email, contraseña, telefono) VALUES (?,?,?,?)";
+                        $stmt = $this->conn->prepare($query);
+                        if($stmt->execute([$username, $email, $password, $telefono])) {
+                            echo "Usuario creado exitosamente";
+                        }else{
+                            echo "ha ocurrido un error al crear al usuario";
+                        }
+                    //}
+              //  }
+            }
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 
 
 }
