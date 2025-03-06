@@ -10,14 +10,16 @@ class token extends conectionDB {
         parent::__construct();
     }
 
-    // metodo para crear los tokens
-
-    
-
-
-    
-
-    // metodo 
+    // funcion para generar un token
+    public function generarToken()
+    {       
+        $numerosAleatorios = [];
+        for ($i=0; $i < 6 ; $i++) { 
+            $numerosAleatorios[] = random_int(0,9);
+        }    
+        $token = implode("",$numerosAleatorios);
+        return $token;
+    }
 }
 
 ?>

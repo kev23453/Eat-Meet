@@ -21,6 +21,8 @@
                 <input type="text" name="digit2" maxlength="1" required>
                 <input type="text" name="digit3" maxlength="1" required>
                 <input type="text" name="digit4" maxlength="1" required>
+                <input type="text" name="digit5" maxlength="1" required>
+                <input type="text" name="digit6" maxlength="1" required>
             </div>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
