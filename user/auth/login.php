@@ -21,6 +21,7 @@ if(isset($_POST['loginSend'])){
     <title>Eat&Meet - Login</title>
     <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/login_styles/login_style.css">
+    <link rel="website icon" type="png" href="../../img/icon2.png">
 </head>
 
 <body>
