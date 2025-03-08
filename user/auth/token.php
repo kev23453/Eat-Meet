@@ -6,6 +6,7 @@
     <title>Verification Code</title>
     <link rel="stylesheet" href="../../assets/css/login_styles/token.css">
     <link rel="stylesheet" href="../../assets/css/fontawesome/style.css">
+    <link rel="website icon" type="png" href="../../img/icon2.png">
 </head>
 <body>
     <div class="container">
