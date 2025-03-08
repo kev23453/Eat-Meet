@@ -20,6 +20,33 @@ class token extends conectionDB {
         $token = implode("",$numerosAleatorios);
         return $token;
     }
+
+
+
+    public function setToken($token, $created_at, $kill_at) {
+        $query = "INSERT INTO token(token, creado_a, finaliza_a) VALUES(?,?,?)";
+        $stmt = $this->conn->prepare($query);
+        $encode_token = base64_encode($token);
+        if($stmt->execute([$encode_token, $created_at, $kill_at])) {
+            return $this->conn->lastInsertId();
+        }
+        //return $encode_token;
+    }
+
+
+
+    public function asignarToken($usuario_id, $token){
+        try{
+            $query = "INSERT INTO usuarioToken(id_usuario, id_token) VALUES(?,?)";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$usuario_id, $token]);
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+            return;
+        }
+    }
+
 }
 
 ?>

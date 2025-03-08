@@ -4,6 +4,7 @@
 
 include_once 'conexionDB.php';
 include_once 'cookies.php';
+include_once 'token.php';
 
 class usuario extends conectionDB
 {
@@ -125,19 +126,37 @@ class usuario extends conectionDB
             $dataUser = $this->obtenerUsuarioPorEmail($email);
             
             if(empty($dataUser)) { // 
-                //foreach($dataUser as $dataUser) {
-                    //if(!$this->verificarExistencia($email, $dataUser['email']) ){
+                // info: aqui ira en caso de que funciones
+                $query = "INSERT INTO usuario (nombre_usuario, email, contraseña, telefono) VALUES (?,?,?,?)";
+                $stmt = $this->conn->prepare($query);
+                if($stmt->execute([$username, $email, $password, $telefono])) {
+                    echo "Usuario creado exitosamente";
+                    $lastInsertedId = $this->conn->lastInsertId();
+                    
+                    // general el token
+                    $token = new token();
+                    $token_generado = $token->generarToken();
 
-                        // info: aqui ira en caso de que funciones
-                        $query = "INSERT INTO usuario (nombre_usuario, email, contraseña, telefono) VALUES (?,?,?,?)";
-                        $stmt = $this->conn->prepare($query);
-                        if($stmt->execute([$username, $email, $password, $telefono])) {
-                            echo "Usuario creado exitosamente";
-                        }else{
-                            echo "ha ocurrido un error al crear al usuario";
-                        }
-                    //}
-              //  }
+
+                    // calcular fechas
+                    date_default_timezone_set("America/Santo_Domingo");
+                    $fecha_actual = date("Y-m-d h:i:s");
+                    $fecha_expiracion = date("Y-m-d h:i:s", strtotime("+5 minutes"));
+
+                    // insertar el token
+                    $lastInsertedToken = $token->setToken($token_generado, $fecha_actual, $fecha_expiracion);
+                    if (!$lastInsertedToken) {
+                        die("Error al insertar el token.");
+                    }
+
+                    // asignar token a usuario 
+                    $token->asignarToken($lastInsertedId, $lastInsertedToken);
+                    header("location:token.php?usuario='$lastInsertedId'");
+                }else{
+                    echo "ha ocurrido un error al crear al usuario";
+                }
+            }else{
+                echo "el usuario ya existe";
             }
         }catch(PDOException $e) {
             echo $e->getMessage();

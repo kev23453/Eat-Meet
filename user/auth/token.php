@@ -1,3 +1,12 @@
+<?php
+
+include '../../utils/autoload.php';
+
+date_default_timezone_set("America/Santo_Domingo");
+$token = new token();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
